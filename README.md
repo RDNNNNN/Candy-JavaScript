@@ -15,7 +15,7 @@ function sumOfSmallestValues(arr) {
   const newArr = arr.sort((a, b) => a - b);
   return newArr[0] + newArr[1];
 }
-// 使用 sort() 做排序,但預設是字串排序,需要改成數字排序
+// 使用 sort() 做排序, 但預設是字串排序, 需要改成數字排序
 // 結果為 < 0, 則等於 a < b, 結果為 > 0, 則等於 a > b, 結果為 == 0, 則等於 a == b
 // 回傳排序後的數字
 const list1 = [19, 5, 42, 2, 77];
