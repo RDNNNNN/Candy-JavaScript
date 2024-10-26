@@ -44,12 +44,12 @@ function missingChar(chars) {
     }
   }
 }
-//先寫一個 for 迴圈
-//設定索引值 i 跟後面的 i + 1 為變數
-//因為每個索引只有一個字所以 charCodeAt() 的內容可帶 0 或是不帶
-//用 charCodeAt() 轉換後的數字間隔會是 1,缺少的字間隔會是 2
-//所以用判斷式不等於 1 的話就是缺少的值
-//使用 String.fromCharCode() 回傳後面的值
+// 先寫一個 for 迴圈
+// 設定索引值 i 跟後面的 i + 1 為變數
+// 因為每個索引只有一個字所以 charCodeAt() 的內容可帶 0 或是不帶
+// 用 charCodeAt() 轉換後的數字間隔會是 1, 缺少的字間隔會是 2
+// 所以用判斷式不等於 1 的話就是缺少的值
+// 使用 String.fromCharCode() 回傳後面的值
 
 console.log(missingChar(chars1)); // 印出 e
 console.log(missingChar(chars2)); // 印出 P
