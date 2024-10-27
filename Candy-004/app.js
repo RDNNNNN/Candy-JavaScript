@@ -9,7 +9,7 @@ function humanReadableTimer(seconds) {
   const timer = `${hour}:${min}:${sec}`;
   return timer;
 }
-// 先設定 hour 的常數因為小時是為秒除以3600, 需要去除餘數所以使用 Math.floor()
+// 先設定 hour 的常數因為小時是為秒除以 3600, 需要去除餘數所以使用 Math.floor()
 // 使用 padStart() 增加 0 (第一個值為總共需要幾個值, 第二個值為要顯示的內容)
 // padStart() 需為字串才能使用, 所以需要在前面新增一個 String
 // 分鐘需要除以 60 才會為秒, 但因為要進位還需要判斷餘數是否為 60
