@@ -45,10 +45,10 @@ function missingChar(chars) {
     }
   }
 }
-// 先寫一個 for 迴圈
+// 先寫出一個 for 迴圈
 // 設定索引值 i 跟後面的 i + 1 為變數
 // 因為每個索引只有一個字所以 charCodeAt() 的內容可帶 0 或是不帶
-// 用 charCodeAt() 轉換後的數字間隔會是 1, 缺少的字間隔會是 2
+// 使用 charCodeAt() 轉換後的數字間隔會是 1, 缺少的字間隔會是 2
 // 所以用判斷式不等於 1 的話就是缺少的值
 // 使用 String.fromCharCode() 回傳後面的值
 
@@ -63,7 +63,7 @@ console.log(missingChar(chars2)); // 印出 P
 
 ### 程式語言：JavaScript
 
-###題目：完成函數的內容，把陣列裡的 0 都移到最後面
+### 題目：完成函數的內容，把陣列裡的 0 都移到最後面
 
 ```js
 let list = [false, 1, 0, -1, 2, 0, 1, 3, "a"];
@@ -75,11 +75,11 @@ function moveZerosToEnd(arr) {
   const concatArr = otherArr.concat(zeroArr);
   return concatArr;
 }
-// 用 filter() 篩選 0 的結果
-// 再用另一個 filter() 篩選非 0 的結果
+// 使用 filter() 篩選 0 的結果
+// 再使用另一個 filter() 篩選非 0 的結果
 // 因為 filter() 會複製出新的陣列
-// 接著使用 concat() 將兩個陣列合併
-// 回傳合併後的值
+// 所以使用 concat() 將兩個陣列合併
+// 最後回傳合併後的值
 
 let result = moveZerosToEnd(list);
 console.log(result); // 印出 [false, 1, -1, 2, 1, 3, "a", 0, 0]
