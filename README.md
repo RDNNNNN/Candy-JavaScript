@@ -354,7 +354,7 @@ console.log(numberReducer(1234567890)); // 印出 9
 
 ### 題目：根據台灣財政部所提供的公司統編驗證規則，計算統一編號是否正確
 
-![規則網址](https://www.fia.gov.tw/singlehtml/3?cntId=c4d9cff38c8642ef8872774ee9987283)
+[規則網址](https://www.fia.gov.tw/singlehtml/3?cntId=c4d9cff38c8642ef8872774ee9987283)
 
 ```js
 function isValidVatNumber(vat) {
