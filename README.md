@@ -17,6 +17,7 @@ function sumOfSmallestValues(arr) {
   const newArr = arr.sort((a, b) => a - b);
   return newArr[0] + newArr[1];
 }
+
 // 使用 sort() 做排序, 但預設是字串排序, 需要改成數字排序
 // 結果為 < 0, 則等於 a < b, 結果為 > 0, 則等於 a > b, 結果為 == 0, 則等於 a == b
 // 回傳排序後的數字
@@ -47,6 +48,7 @@ function missingChar(chars) {
     }
   }
 }
+
 // 先寫出一個 for 迴圈
 // 設定索引值 i 跟後面的 i + 1 為變數
 // 因為每個索引只有一個字所以 charCodeAt() 的內容可帶 0 或是不帶
@@ -77,6 +79,7 @@ function moveZerosToEnd(arr) {
   const concatArr = otherArr.concat(zeroArr);
   return concatArr;
 }
+
 // 使用 filter() 篩選 0 的結果
 // 再使用另一個 filter() 篩選非 0 的結果
 // 因為 filter() 會複製出新的陣列
@@ -101,6 +104,7 @@ function humanReadableTimer(seconds) {
   const timer = `${hour}:${min}:${sec}`;
   return timer;
 }
+
 // 先設定 hour 的常數因為小時是為秒除以 3600, 需要去除餘數所以使用 Math.floor()
 // 使用 padStart() 增加 0 (第一個值為總共需要幾個值, 第二個值為要顯示的內容)
 // padStart() 需為字串才能使用, 所以需要在前面新增一個 String()
@@ -133,6 +137,7 @@ function squareDigits(num) {
   const calcNum = splitNum.map((x) => x * x);
   return calcNum.join("");
 }
+
 // 使用 toString() 轉成字串
 // 再使用 split() 分割內容, 如果內容是空字串則會每個字符都被分割
 // 設定一個常數使用 map() 將分割的內容做平方運算
@@ -158,6 +163,7 @@ function findDifferent(numbers) {
   }
   return sortArr[0];
 }
+
 // 設定常數使用 sort() 進行升幂排序
 // 因為一個陣列裡面只有兩種數字, 所以只要比較第一個跟第二個數字是否相同
 // 就可以判斷不同的數字是在最前面或是最後面
@@ -180,6 +186,7 @@ function findSomeDifferent(numbers) {
 
   return evens.length === 1 ? evens[0] : odds[0];
 }
+
 // 設定一個常數並使用 filter() 取餘數的方式判斷奇數
 // 設定一個常數使用 filter() 取餘數的方式判斷偶數
 // 使用三元運算子判斷奇數長度是否等於 1, 因爲題目只有一個奇數跟偶數
@@ -214,6 +221,7 @@ function highestScoreWord(input) {
   );
   return splitInput[mapInput.indexOf(maxScore)];
 }
+
 // 先設定一個常數並使用 split(" ") 切割, 因為有加空格所以是將字串中的空格作為切割點
 // 設定一個常數並使用 map() 的方式再使用 split() 做單個字串的切割
 // charCodeAt() 不能直接對陣列使用, 所以再使用 map() 讓 charCodeAt() 可以使用
@@ -239,6 +247,7 @@ console.log(highestScoreWord("in time machine there are some bugs")); // 印出 
 function removeAnchor(url) {
   return url.split("#")[0];
 }
+
 // 使用 split() 將 # 作為切割點, 第二個值為返回值
 // 由於已經被 # 分割成兩半, 一半為 # 之前, 另一半為 # 之後
 // 利用索引值抓取前面的值並回傳
@@ -256,7 +265,9 @@ console.log(removeAnchor("5xcampus.com/courses/?page=1#about")); // 印出 t5xca
 
 ### 範例：
 
-`9527 變成 "1000 x 9 + 100 x 5 + 10 x 2 + 7"`
+```js
+9527 變成 "1000 x 9 + 100 x 5 + 10 x 2 + 7"
+```
 
 ```js
 function expandedForm(num) {
@@ -271,6 +282,7 @@ function expandedForm(num) {
   }
   return arr.join(" + ");
 }
+
 // 設定一個常數將數字轉為字串
 // 設定一個常數為空陣列
 // 使用 for 迴圈處理每一個字
@@ -384,6 +396,7 @@ function isValidVatNumber(vat) {
     }
   }
 }
+
 // 先設定一個變數用於儲存結果
 // 將邏輯乘數分割後轉成數字
 // 寫一個 for 迴圈
@@ -408,7 +421,11 @@ console.log(isValidVatNumber("88117126")); // false
 
 ### 題目：把鄰近的重複值去除，但仍照原本的順序排序
 
-`範例："AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']`
+### 範例：
+
+```js
+"AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']
+```
 
 ```js
 function uniqueOrder(sequence) {
@@ -421,6 +438,7 @@ function uniqueOrder(sequence) {
   }
   return arr;
 }
+
 // 先設定一個空陣列, 寫一個 for 迴圈
 // 判斷迴圈的前一個值跟後一個如果不相同, 將當前值 push() 到空陣列
 // 將 push() 後的陣列回傳
@@ -437,10 +455,11 @@ console.log(uniqueOrder([1, 1, 1, 2, 2, 2, 1])); // [1, 2, 1]
 
 ### 題目：把原本的字串拆解成 2 個字元一組，若不足 2 個字則補上底線
 
+### 範例：
+
 ```js
-範例：
-      "abcdef" -> ['ab', 'cd', 'ef']
-            "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
+"abcdef" -> ['ab', 'cd', 'ef']
+"abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 ```
 
 ```js
@@ -448,6 +467,7 @@ function splitString(str) {
   if (str === "") return [];
   return (str.length % 2 == 0 ? str : str + "_").match(/.{2}/g);
 }
+
 // 判斷字串是空字串時回傳空陣列
 // 如果不是空字串時, 字串取 2 的餘數為 0 回傳原本的陣列
 // 如果不為 0, 表示有字串是單獨的則在字串後面加 "_"
@@ -465,8 +485,10 @@ console.log(splitString("")); // []
 
 ### 題目：把原本 snake_case 的字轉換成 camelCase 格式
 
+### 範例：
+
 ```js
-範例："hello_world" -> "helloWorld"
+"hello_world" -> "helloWorld"
 ```
 
 ```js
@@ -481,6 +503,7 @@ function toCamelCase(str) {
     })
     .join("");
 }
+
 // 使用split() 將 "_" 作為分割點
 // 使用 map() 分別帶入值跟索引值的參數
 // 判斷索引值不為 0 的情況
@@ -499,8 +522,10 @@ console.log(toCamelCase("get_good_score")); // getGoodScore
 
 ### 題目：計算數字的 2 進位裡有幾個 1
 
+### 範例：
+
 ```js
-範例：5 -> 101 -> 2 個 1
+5 -> 101 -> 2 個 1
 ```
 
 ```js
@@ -514,6 +539,7 @@ function countBits(num) {
   }
   return result;
 }
+
 // 設定一個變數 result
 // 設定一個常數 numbinary 為二進位後的字串
 // 寫一個 for 迴圈
@@ -534,6 +560,7 @@ console.log(countBits(9527)); // 8
 const randomNumber = function (min, ...max) {
   return Math.floor(Math.random() * (max - min) + min);
 };
+
 // 帶入兩個參數 (min,...max)
 // 不確定幾個參數時使用其餘運算符
 // 其餘運算符沒有帶入值的時候在運算時會轉成空陣列 []
@@ -556,6 +583,7 @@ function isSquare(num) {
   const sqrtNum = Math.sqrt(num);
   return Math.floor(sqrtNum) == sqrtNum;
 }
+
 // Math.sqrt() 會回傳數字的平方根
 //使用 Math.floor() 取整數判斷平方根是否也為整數
 
@@ -580,6 +608,7 @@ function xxoo(str) {
   const matchO = (strLower.match(/o/g) || []).length;
   return matchX == matchO;
 }
+
 // 設定 strLower 使用 toLowerCase() 將字串轉成小寫
 //設定 matchX 與 maxthO 使用 match() 並搭配正規表達式篩選, 由於 match() 找不到會回傳null, 所以 OR 運算符使用空陣列的長度是 0 的特性來代替 null
 // 比較 matchX 跟 matchO 長度是否相等並回傳
@@ -618,6 +647,7 @@ class Stack {
     return this.items.length;
   }
 }
+
 // 用陣列來儲存堆疊的元素
 // 添加元素到堆疊頂端
 // 移除並返回堆疊頂端的元素
@@ -662,6 +692,7 @@ class Queue {
     return this.items.length;
   }
 }
+
 // 使用陣列儲存隊列的元素
 // 將元素加入隊列的尾端
 // 移除並返回隊列的前端元素
@@ -730,6 +761,7 @@ function calcLCM(...numbers) {
 
   return numbers.reduce((lcm, num) => lcmTwoNumbers(lcm, num));
 }
+
 // 使用 GCD 函數
 // 計算兩個數字的 LCM
 // 使用 reduce 將多個數字依序求 LCM
@@ -746,12 +778,7 @@ console.log(calcLCM(104, 96, 36, 88)); // 41184
 
 ### 題目：
 
-```
-   一般我們常見的四捨五入計算方式在統計上容易造成計算偏差
-   於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差
-   計算方式是「四捨六入五成雙」
-   當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數
-```
+#### 一般我們常見的四捨五入計算方式在統計上容易造成計算偏差，於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差，計算方式是「四捨六入五成雙」，當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數。
 
 ```js
 function bankersRounding(num, digits = 0) {
@@ -769,7 +796,8 @@ function bankersRounding(num, digits = 0) {
     return (isEven ? integerPart : integerPart + 1) / factor;
   }
 }
-// 設定 factor用來移動小數點
+
+// 設定 factor 用來移動小數點
 // 設定 shiftedNum 用來移動小數點後的數值
 // integerPart 為取整數部分
 // decimalPart 為取小數部分
